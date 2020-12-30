@@ -1,15 +1,37 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[108]:
+# In[142]:
+
+
+# Read Instructions carefully before attempting this assignment
+
+# 1) don't rename any function name
+# 2) don't rename any variable name
+# 3) don't remove any #comment 
+# 4) don't remove """ under triple quate values """
+# 5) you have to write code where you found "write your code here"
+# 6) after download rename this file with this format "PIAICCompletRollNumber_AssignmentNo.py"
+#   Example piaic17896_Assignment1.py
+# 7) After complete this assignment please push on your own GitHub repository.
+# 8) you can submit this assignment through the google form
+# 9) copy this file absolute URL then paste in the google form
+#  The example above: https://github.com/EnggQasim/Batch04_to_35/blob/main/Sunday/1_30%20to%203_30/Assignments/assignment1.txt
+
+# * Because all assignment we will be checked through software if you missed any above points 
+# * then we can't assign your scores in our database.
+
+
+
 
 
 import numpy as np
 
 
-# In[109]:
+# In[145]:
 
 
+# Task no 1
 def function1():
     # create 2d array from 1,12 range 
     # dimension should be 6row 2 columns  
@@ -18,17 +40,21 @@ def function1():
     x =  np.arange(1,13).reshape((6,2)) 
 
     return x
+    """
+    expected output:
+    [[ 1  2]
+    [ 3  4]
+    [ 5  6]
+    [ 7  8]
+    [ 9 10]
+    [11 12]]
+    """
 
 
-# In[110]:
+# In[146]:
 
 
-function1()
-
-
-# In[111]:
-
-
+# Task2
 def function2():
     #create 3D array (3,3,3)
     #must data type should have float64
@@ -39,32 +65,46 @@ def function2():
 
 
     return x
+    """
+    Expected: out put
+array([[[10., 11., 12.],
+        [13., 14., 15.],
+        [16., 17., 18.]],
+       [[19., 20., 21.],
+        [22., 23., 24.],
+        [25., 26., 27.]],
+       [[28., 29., 30.],
+        [31., 32., 33.],
+        [34., 35., 36.]]])    
+    """
 
 
-# In[112]:
+# In[152]:
 
 
-function2()
-
-
-# In[113]:
-
-
+#task3
 def function3():
     #extract those numbers from given array. those are must exist in 5,7 Table
     #example [35,70,105,..]
     a = np.arange(1, 100*10+1).reshape((100,10))
-    x = a[10] #wrtie your code here
+    x = a[(a%5==0) & (a%7==0)].tolist()
+    
     return x
+    """
+    Expected Output:
+     [35,  70, 105, 140, 175, 210, 245, 280, 315, 350, 385, 420, 455,
+       490, 525, 560, 595, 630, 665, 700, 735, 770, 805, 840, 875, 910,
+       945, 980] 
+    """ 
 
 
-# In[114]:
+# In[153]:
 
 
 function3()
 
 
-# In[115]:
+# In[154]:
 
 
 #task4
@@ -83,13 +123,7 @@ def function4():
     """ 
 
 
-# In[116]:
-
-
-function4()
-
-
-# In[117]:
+# In[155]:
 
 
 #task5
@@ -108,13 +142,7 @@ def function5():
     """ 
 
 
-# In[118]:
-
-
-function5()
-
-
-# In[119]:
+# In[157]:
 
 
 #task6
@@ -125,10 +153,9 @@ def function6():
     arr[4] = 10
     arr[7] = 20
     return arr
-function6()
 
 
-# In[121]:
+# In[158]:
 
 
 #task7
@@ -142,10 +169,9 @@ def function7():
     Expected Output:
           array([0, 0, 0, 0], dtype=int64)
     """ 
-function7()
 
 
-# In[124]:
+# In[159]:
 
 
 #task8
@@ -160,10 +186,9 @@ def function8():
              array([[6, 6, 6, 6, 6],
                     [6, 6, 6, 6, 6]], dtype=uint32)
     """ 
-function8()
 
 
-# In[125]:
+# In[161]:
 
 
 #task9
@@ -181,10 +206,9 @@ def function9():
                    54,  56,  58,  60,  62,  64,  66,  68,  70,  72,  74,  76,  78,
                    80,  82,  84,  86,  88,  90,  92,  94,  96,  98, 100])
     """ 
-function9()
 
 
-# In[126]:
+# In[163]:
 
 
 def function10():
@@ -202,10 +226,9 @@ def function10():
                      [2 2 2]
                      [2 2 2]])
     """ 
-function10()
 
 
-# In[127]:
+# In[164]:
 
 
 #task11
@@ -221,10 +244,10 @@ def function11():
     Expected Output:
              array([ 0, -1,  2, -1,  4, -1,  6, -1,  8, -1])
     """ 
-function11()    
+    
 
 
-# In[128]:
+# In[165]:
 
 
 #task12
@@ -233,19 +256,17 @@ def function12():
     # HINT: use stacking concept
     
     arr = np.array([1,2,3])
-    #a=np.tile(arr, 3)
-    ans = np.repeat(arr, 3) #write your code here 
+    ans = np.hstack((arr.repeat(3), np.tile(arr,3)))
   
     return ans
 
     """
     Expected Output:
-             array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
+            array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
     """ 
-function12()
 
 
-# In[129]:
+# In[166]:
 
 
 #task13
@@ -254,42 +275,42 @@ def function13():
     
     
     arr = np.array([2, 6, 1, 9, 10, 3, 27])
-    ans = np.where(np.logical_and(arr >=5, arr <=20)) #write your code here 
+    ans = arr[(arr>5) & (arr<10)]
   
     return ans
 
     """
     Expected Output:
             array([6, 9])
-    """ 
-function13()
+    """  
 
 
-# In[130]:
+# In[167]:
 
 
 #task14
 def function14():
-    # Create an 8X3 integer array from a range between 10 to 34 such that the difference between each element is 1 and then Split the array into four equal-sized sub-arrays.
+     # Create an 8X3 integer array from a range between 10 to 34 such that the difference between each element is 1 and then Split the array into four equal-sized sub-arrays.
     # Hint use split method
     
     
-    arr = np.arange(10, 34, 1) #write reshape code
-    ans = arr.reshape(8,3) #write your code here 
-  
-    return ans
+    arr = np.arange(10, 34, 1).reshape((8,3))
+    ans = np.split(arr,4)
 
+    return ans
+  
+  
+    
     """
     Expected Output:
-     [array([[10, 11, 12],[13, 14, 15]]), 
-       array([[16, 17, 18],[19, 20, 21]]), 
-       array([[22, 23, 24],[25, 26, 27]]), 
-       array([[28, 29, 30],[31, 32, 33]])]
+    [array([[10, 11, 12],[13, 14, 15]]), 
+    array([[16, 17, 18],[19, 20, 21]]), 
+    array([[22, 23, 24],[25, 26, 27]]), 
+    array([[28, 29, 30],[31, 32, 33]])]
     """
-function14()
 
 
-# In[131]:
+# In[168]:
 
 
 #task15
@@ -308,10 +329,9 @@ def function15():
                   [ 8,  2, -2],
                   [ 6,  3,  9]])
     """ 
-function15()
 
 
-# In[132]:
+# In[169]:
 
 
 #task16
@@ -331,10 +351,10 @@ def function16():
                 [[2 3]]
                 [[3 4]]]
     """ 
-function16()    
+  
 
 
-# In[133]:
+# In[170]:
 
 
 #Task17
@@ -360,10 +380,9 @@ def function17():
            ['NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO']],
           dtype='<U3')
     """
-function17()
 
 
-# In[134]:
+# In[171]:
 
 
 #Task18
@@ -371,13 +390,13 @@ def function18():
     # count values of "students" are exist in "piaic"
     piaic = np.arange(100)
     students = np.array([5,20,50,200,301,7001])
-    x = np.count_nonzero(piaic == students, axis = 0) # Write you code Here
+    x=np.count_nonzero(np.isin(students, piaic))
     return x
-function18()
+
     #Expected output: 3
 
 
-# In[135]:
+# In[172]:
 
 
 # Task19
@@ -402,10 +421,9 @@ def function19():
        [ 69, 158, 257, 366, 485],
        [110, 225, 350, 485, 630]])
     """
-function19()
 
 
-# In[136]:
+# In[174]:
 
 
 #Task20
@@ -416,19 +434,7 @@ def function20():
         return x*2+3-2
 
     return abc(x) #Write your Code here
-function20()
+
 #Expected Output: array([ 3,  5,  7,  9, 11, 13, 15, 17, 19, 21])
 #--------------------------X-----------------------------X-----------------------------X----------------------------X---------------------
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
